@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC06FB571A3B603C00AE7BB5 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06FB561A3B603C00AE7BB5 /* CurrentWeather.swift */; };
+		AC06FB591A3B638000AE7BB5 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06FB581A3B638000AE7BB5 /* NetworkHandler.swift */; };
+		AC09C4281A69E22100C48EB9 /* CWStatusBarNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09C4271A69E22100C48EB9 /* CWStatusBarNotification.swift */; };
+		AC09C42A1A6B024500C48EB9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09C4291A6B024500C48EB9 /* SwiftyJSON.swift */; };
+		AC09C42C1A6C2CD600C48EB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC09C42B1A6C2CD600C48EB9 /* Images.xcassets */; };
 		AC8788AF1A2D3F04004595E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8788AE1A2D3F04004595E5 /* AppDelegate.swift */; };
 		AC8788B11A2D3F04004595E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8788B01A2D3F04004595E5 /* ViewController.swift */; };
 		AC8788B41A2D3F04004595E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8788B21A2D3F04004595E5 /* Main.storyboard */; };
-		AC8788B61A2D3F04004595E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8788B51A2D3F04004595E5 /* Images.xcassets */; };
 		AC8788B91A2D3F04004595E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8788B71A2D3F04004595E5 /* LaunchScreen.xib */; };
 		AC8788C51A2D3F04004595E5 /* MeteoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8788C41A2D3F04004595E5 /* MeteoTests.swift */; };
 /* End PBXBuildFile section */
@@ -26,12 +30,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC06FB561A3B603C00AE7BB5 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		AC06FB581A3B638000AE7BB5 /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		AC09C4271A69E22100C48EB9 /* CWStatusBarNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWStatusBarNotification.swift; sourceTree = "<group>"; };
+		AC09C4291A6B024500C48EB9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		AC09C42B1A6C2CD600C48EB9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AC8788A91A2D3F04004595E5 /* Meteo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meteo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8788AD1A2D3F04004595E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC8788AE1A2D3F04004595E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC8788B01A2D3F04004595E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC8788B31A2D3F04004595E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AC8788B51A2D3F04004595E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AC8788B81A2D3F04004595E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AC8788BE1A2D3F04004595E5 /* MeteoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeteoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8788C31A2D3F04004595E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,10 +87,14 @@
 			children = (
 				AC8788AE1A2D3F04004595E5 /* AppDelegate.swift */,
 				AC8788B01A2D3F04004595E5 /* ViewController.swift */,
+				AC09C4291A6B024500C48EB9 /* SwiftyJSON.swift */,
+				AC09C4271A69E22100C48EB9 /* CWStatusBarNotification.swift */,
 				AC8788B21A2D3F04004595E5 /* Main.storyboard */,
-				AC8788B51A2D3F04004595E5 /* Images.xcassets */,
 				AC8788B71A2D3F04004595E5 /* LaunchScreen.xib */,
+				AC09C42B1A6C2CD600C48EB9 /* Images.xcassets */,
 				AC8788AC1A2D3F04004595E5 /* Supporting Files */,
+				AC06FB561A3B603C00AE7BB5 /* CurrentWeather.swift */,
+				AC06FB581A3B638000AE7BB5 /* NetworkHandler.swift */,
 			);
 			path = Meteo;
 			sourceTree = "<group>";
@@ -192,9 +204,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC09C42C1A6C2CD600C48EB9 /* Images.xcassets in Resources */,
 				AC8788B41A2D3F04004595E5 /* Main.storyboard in Resources */,
 				AC8788B91A2D3F04004595E5 /* LaunchScreen.xib in Resources */,
-				AC8788B61A2D3F04004595E5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC09C4281A69E22100C48EB9 /* CWStatusBarNotification.swift in Sources */,
 				AC8788B11A2D3F04004595E5 /* ViewController.swift in Sources */,
+				AC06FB571A3B603C00AE7BB5 /* CurrentWeather.swift in Sources */,
+				AC09C42A1A6B024500C48EB9 /* SwiftyJSON.swift in Sources */,
 				AC8788AF1A2D3F04004595E5 /* AppDelegate.swift in Sources */,
+				AC06FB591A3B638000AE7BB5 /* NetworkHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +421,7 @@
 				AC8788CA1A2D3F04004595E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC8788CB1A2D3F04004595E5 /* Build configuration list for PBXNativeTarget "MeteoTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +430,7 @@
 				AC8788CD1A2D3F04004595E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
