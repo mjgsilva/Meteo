@@ -30,7 +30,7 @@ struct CurrentWeather {
         let unixtime = NSTimeInterval(time)
         let date = NSDate(timeIntervalSince1970: unixtime)
         let dateFormatter = NSDateFormatter()
-        dateFormatter.timeStyle = .MediumStyle
+        dateFormatter.timeStyle = .ShortStyle
         return dateFormatter.stringFromDate(date)
     }
     
