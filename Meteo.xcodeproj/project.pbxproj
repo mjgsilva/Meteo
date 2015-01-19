@@ -12,6 +12,7 @@
 		AC09C4281A69E22100C48EB9 /* CWStatusBarNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09C4271A69E22100C48EB9 /* CWStatusBarNotification.swift */; };
 		AC09C42A1A6B024500C48EB9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC09C4291A6B024500C48EB9 /* SwiftyJSON.swift */; };
 		AC09C42C1A6C2CD600C48EB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC09C42B1A6C2CD600C48EB9 /* Images.xcassets */; };
+		AC5465B61A6D9CCA00EC3D46 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC5465B51A6D9CCA00EC3D46 /* CoreLocation.framework */; };
 		AC8788AF1A2D3F04004595E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8788AE1A2D3F04004595E5 /* AppDelegate.swift */; };
 		AC8788B11A2D3F04004595E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8788B01A2D3F04004595E5 /* ViewController.swift */; };
 		AC8788B41A2D3F04004595E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8788B21A2D3F04004595E5 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		AC09C4271A69E22100C48EB9 /* CWStatusBarNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWStatusBarNotification.swift; sourceTree = "<group>"; };
 		AC09C4291A6B024500C48EB9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		AC09C42B1A6C2CD600C48EB9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AC5465B51A6D9CCA00EC3D46 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AC8788A91A2D3F04004595E5 /* Meteo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meteo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8788AD1A2D3F04004595E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC8788AE1A2D3F04004595E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5465B61A6D9CCA00EC3D46 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +70,7 @@
 		AC8788A01A2D3F04004595E5 = {
 			isa = PBXGroup;
 			children = (
+				AC5465B51A6D9CCA00EC3D46 /* CoreLocation.framework */,
 				AC8788AB1A2D3F04004595E5 /* Meteo */,
 				AC8788C11A2D3F04004595E5 /* MeteoTests */,
 				AC8788AA1A2D3F04004595E5 /* Products */,
@@ -89,12 +93,12 @@
 				AC8788B01A2D3F04004595E5 /* ViewController.swift */,
 				AC09C4291A6B024500C48EB9 /* SwiftyJSON.swift */,
 				AC09C4271A69E22100C48EB9 /* CWStatusBarNotification.swift */,
+				AC06FB561A3B603C00AE7BB5 /* CurrentWeather.swift */,
+				AC06FB581A3B638000AE7BB5 /* NetworkHandler.swift */,
 				AC8788B21A2D3F04004595E5 /* Main.storyboard */,
 				AC8788B71A2D3F04004595E5 /* LaunchScreen.xib */,
 				AC09C42B1A6C2CD600C48EB9 /* Images.xcassets */,
 				AC8788AC1A2D3F04004595E5 /* Supporting Files */,
-				AC06FB561A3B603C00AE7BB5 /* CurrentWeather.swift */,
-				AC06FB581A3B638000AE7BB5 /* NetworkHandler.swift */,
 			);
 			path = Meteo;
 			sourceTree = "<group>";
