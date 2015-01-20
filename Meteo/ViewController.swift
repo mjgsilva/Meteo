@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var iconView: UIImageView!
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
@@ -19,9 +21,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var updateButton: UIButton!
     @IBOutlet weak var updateActivityIndicator: UIActivityIndicatorView!
     
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkRequest()
+        getMyLocation()
+        startUpdateAnimation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,8 +34,44 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func networkRequest() -> Void {
-        NetworkHandler.getWeatherReport(latitude: "37.8267", longitude: "-122.423",completion: { (data: NSData?, error: NSError?) -> Void in
+    @IBAction func update() {
+        getMyLocation()
+        startUpdateAnimation()
+    }
+    
+    func getMyLocation() -> Void {
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        } else {
+            showErrorNotification("Location service disabled")
+        }
+    }
+    
+   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) -> Void {
+        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
+            
+            if error != nil {
+                self.showErrorNotification("Error retrieving GPS coordinates")
+            } else {
+                if placemarks.count > 0 {
+                    let pm = placemarks[0] as CLPlacemark
+                    self.assignLocationToLabel(pm.locality)
+                    self.networkRequest(manager.location.coordinate.latitude.description,longitude: manager.location.coordinate.longitude.description)
+                } else {
+                    self.showErrorNotification("GPS data corrupted")
+                }
+            }
+            
+            self.locationManager.stopUpdatingLocation()
+            
+        })
+    }
+    
+    func networkRequest(latitude: String, longitude: String) -> Void {
+        NetworkHandler.getWeatherReport(latitude: latitude, longitude: longitude,completion: { (data: NSData?, error: NSError?) -> Void in
             if error != nil {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.showErrorNotification(error!.localizedDescription)
@@ -44,6 +85,10 @@ class ViewController: UIViewController {
                 })
             }
         })
+    }
+    
+    func assignLocationToLabel(location: String) -> Void {
+        locationLabel.text = location
     }
     
     func assignDataToLabels(currentWeather: CurrentWeather) -> Void {
@@ -87,11 +132,6 @@ class ViewController: UIViewController {
         updateButton.hidden = false
         updateActivityIndicator.hidden = true
         updateActivityIndicator.stopAnimating()
-    }
-    
-    @IBAction func update() {
-        networkRequest()
-        startUpdateAnimation()
     }
     
 }

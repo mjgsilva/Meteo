@@ -15,7 +15,7 @@ private let apiKey = "6b97539665ae44664487823d01995d86"
 class NetworkHandler {
     
     class func getWeatherReport(#latitude: String, longitude: String, completion:(data: NSData?, error: NSError?) -> Void) {
-        let url = NSURL(string: "\(apiURL)/\(apiKey)/\(latitude),\(longitude)")
+        let url = NSURL(string: "\(apiURL)/\(apiKey)/\(latitude),\(longitude)?units=si")
 
         var session = NSURLSession.sharedSession()
         

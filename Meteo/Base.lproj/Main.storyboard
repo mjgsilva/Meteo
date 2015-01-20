@@ -136,6 +136,7 @@
                         <outlet property="currentTimeLabel" destination="b9b-zW-dF0" id="GGA-Dd-igq"/>
                         <outlet property="humidityLabel" destination="raz-oS-xNA" id="Bfs-yN-JkI"/>
                         <outlet property="iconView" destination="XlF-cv-Agq" id="xhG-m0-TNt"/>
+                        <outlet property="locationLabel" destination="1fb-Ld-n0f" id="4jG-bv-LW0"/>
                         <outlet property="summaryLabel" destination="L96-6B-6bf" id="LXG-Ub-8BB"/>
                         <outlet property="temperatureLabel" destination="ymj-gy-MHr" id="hhh-PZ-m6p"/>
                         <outlet property="updateActivityIndicator" destination="pve-eN-weK" id="fwF-Ev-R1A"/>
