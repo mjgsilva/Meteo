@@ -51,8 +51,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        showErrorNotification("The operation couldn’t be completed")
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) -> Void {
+        showErrorNotification("Error retrieving your location")
         locationManager.stopUpdatingLocation()
         stopUpdateAnimation()
     }
@@ -62,7 +62,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             if error != nil {
                 self.showErrorNotification("Error retrieving GPS coordinates")
-                self.stopUpdateAnimation()
             } else {
                 if placemarks.count > 0 {
                     let pm = placemarks[0] as CLPlacemark
@@ -70,12 +69,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     self.networkRequest(manager.location.coordinate.latitude.description,longitude: manager.location.coordinate.longitude.description)
                 } else {
                     self.showErrorNotification("GPS data corrupted")
-                    self.stopUpdateAnimation()
                 }
             }
             
             self.locationManager.stopUpdatingLocation()
-            
+            self.stopUpdateAnimation()
         })
     }
     
