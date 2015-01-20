@@ -25,8 +25,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMyLocation()
         startUpdateAnimation()
+        getMyLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,8 +35,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     @IBAction func update() {
-        getMyLocation()
         startUpdateAnimation()
+        getMyLocation()
     }
     
     func getMyLocation() -> Void {
@@ -47,7 +47,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         } else {
             showErrorNotification("Location service disabled")
+            stopUpdateAnimation()
         }
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        showErrorNotification("The operation couldn’t be completed")
+        locationManager.stopUpdatingLocation()
+        stopUpdateAnimation()
     }
     
    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) -> Void {
@@ -55,6 +62,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             if error != nil {
                 self.showErrorNotification("Error retrieving GPS coordinates")
+                self.stopUpdateAnimation()
             } else {
                 if placemarks.count > 0 {
                     let pm = placemarks[0] as CLPlacemark
@@ -62,6 +70,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     self.networkRequest(manager.location.coordinate.latitude.description,longitude: manager.location.coordinate.longitude.description)
                 } else {
                     self.showErrorNotification("GPS data corrupted")
+                    self.stopUpdateAnimation()
                 }
             }
             
